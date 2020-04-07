@@ -1,0 +1,7 @@
+## Interface: 80300
+## Title: Magic Post Button
+## Version: 1
+## Author: plusmouse
+## Notes: Post with a keyboard shortcut
+
+MagicButton.lua
