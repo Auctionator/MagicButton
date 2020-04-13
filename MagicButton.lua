@@ -38,6 +38,10 @@ local function setCancelAuction()
     MagicButton_Print("No more to cancel")
     auctionCancelIndex = 1
   end
+  if auctionToCancel and auctionToCancel.status == 1 then
+    auctionCancelIndex = auctionCancelIndex + 1
+    setCancelAuction()
+  end
   cancel = false
 end
 local function CancelAuctionMagicEvent(frame, event, itemKey)
