@@ -42,10 +42,13 @@ local function CancelAuctionMagicEvent(frame, event, itemKey)
   end
   if event == "OWNED_AUCTIONS_UPDATED" then
     setCancelAuction()
+    if not auctionToCancel then
+      C_AuctionHouse.SendSearchQuery(auctionToCancel.itemKey, {}, true)
+    end
     return
   end
 
-  if not auctionToCancel or cancel then
+  if (not auctionToCancel) or cancel then
     return
   end
 
@@ -83,7 +86,7 @@ function MagicButton_CancelAuctionMagic()
   if cancel then
     MagicButton_Print("Cancelling ID " .. auctionToCancel.auctionID)
     C_AuctionHouse.CancelAuction(auctionToCancel.auctionID)
-    cancel = false
+    auctionToCancel = nil
   elseif auctionToCancel then
     C_AuctionHouse.SendSearchQuery(auctionToCancel.itemKey, {}, true)
   else
