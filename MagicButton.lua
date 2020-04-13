@@ -48,6 +48,8 @@ local function CancelAuctionMagicEvent(frame, event, itemKey)
   end
 
   if AuctionHouseFrame.displayMode ~= AuctionHouseFrameDisplayMode.Auctions then
+    auctionToCancel = nil
+    cancel = false
     return
   end
 
