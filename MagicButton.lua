@@ -24,7 +24,13 @@ local MAGIC_BUTTON_CANCEL_EVENTS = {
   "OWNED_AUCTIONS_UPDATED",
   "COMMODITY_SEARCH_RESULTS_UPDATED",
   "ITEM_SEARCH_RESULTS_UPDATED",
+  "AUCTION_CANCELED",
 }
+local function cancelSearch()
+  if auctionToCancel then
+    C_AuctionHouse.SendSearchQuery(auctionToCancel.itemKey, {}, true)
+  end
+end
 local function setCancelAuction()
   local wasAuction = auctionToCancel
   auctionToCancel = C_AuctionHouse.GetOwnedAuctionInfo(auctionCancelIndex)
@@ -40,11 +46,18 @@ local function CancelAuctionMagicEvent(frame, event, itemKey)
     auctionCancelIndex = 1
     return
   end
+
+  if AuctionHouseFrame.displayMode ~= AuctionHouseFrameDisplayMode.Auctions then
+    return
+  end
+
   if event == "OWNED_AUCTIONS_UPDATED" then
     setCancelAuction()
-    if not auctionToCancel then
-      C_AuctionHouse.SendSearchQuery(auctionToCancel.itemKey, {}, true)
-    end
+    return
+  end
+
+  if event == "AUCTION_CANCELED" then
+    MagicButton_Print("Click again to restart undercut search")
     return
   end
 
@@ -66,12 +79,13 @@ local function CancelAuctionMagicEvent(frame, event, itemKey)
 
   if resultInfo.owners[1] ~= "player" then
     cancel = true
-    MagicButton_Print("Click again to cancel ".. itemKeyInfo.itemName)
+    MagicButton_Print("You aren't first. Click again to cancel ".. itemKeyInfo.itemName)
   else
     cancel = false
     MagicButton_Print("You own the top auction for ".. itemKeyInfo.itemName ..". Looking at next one")
     auctionCancelIndex = auctionCancelIndex + 1
     setCancelAuction()
+    cancelSearch()
   end
 end
 
@@ -87,9 +101,8 @@ function MagicButton_CancelAuctionMagic()
     MagicButton_Print("Cancelling ID " .. auctionToCancel.auctionID)
     C_AuctionHouse.CancelAuction(auctionToCancel.auctionID)
     auctionToCancel = nil
-  elseif auctionToCancel then
-    C_AuctionHouse.SendSearchQuery(auctionToCancel.itemKey, {}, true)
   else
     setCancelAuction()
+    cancelSearch()
   end
 end
