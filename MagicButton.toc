@@ -4,4 +4,6 @@
 ## Author: plusmouse
 ## Notes: Post and Cancel with a keyboard shortcut
 
-MagicButton.lua
+Source/MagicButton.lua
+Source/Mixins/Undercut.lua
+Source/Frames/Undercut.xml
