@@ -31,7 +31,7 @@ function MagicButtonUndercutFrameMixin:OnEvent(event, ...)
   elseif event == "AUCTION_CANCELED" then
     MagicButton_Print(MAGIC_BUTTON_L_SEARCH_RESTART)
 
-  elseif self.currentAuction.status == 1 then
+  elseif self.currentAuction and self.currentAuction.status == 1 then
     self:SkipAuction()
 
   elseif self.searchWaiting then
