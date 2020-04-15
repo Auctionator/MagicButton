@@ -1,0 +1,5 @@
+*.DS_Store
+.vscode/*
+*.swp
+tmp
+local.sh
