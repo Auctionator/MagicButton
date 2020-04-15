@@ -84,7 +84,7 @@ function MagicButtonUndercutFrameMixin:SearchForUndercuts()
   self.isUndercut = false
   if self.currentAuction then
     self.searchWaiting = true
-    C_AuctionHouse.SendSearchQuery(self.currentAuction.itemKey, {}, true)
+    C_AuctionHouse.SendSearchQuery(self.currentAuction.itemKey, {{sortOrder = 4, reverseSort = false}}, true)
   end
 end
 
