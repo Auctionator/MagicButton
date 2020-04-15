@@ -1,6 +1,0 @@
-ackage-as: MagicButton
-
-ignore: # Files and directories beginning with a dot (such as .git) are automatically ignored, as is the pgkmeta file itself.
-    - README.md
-
-license-output: LICENSE

@@ -1,6 +1,6 @@
 ## Interface: 80300
 ## Title: Magic Post Button
-## Version: @project-version@
+## Version: 3.6
 ## Author: plusmouse
 ## Notes: Post and Cancel with a keyboard shortcut
 
