@@ -9,9 +9,11 @@ local UNDERCUT_EVENTS = {
 }
 
 MAGIC_BUTTON_L_UNDERCUT_LOADED = "Auction cancelling loaded. Click once more please :)"
-MAGIC_BUTTON_L_NOT_FIRST = "You aren't first. Click again to cancel %s"
-MAGIC_BUTTON_L_OWNED_TOP = "You own the top auction for %s. Skipping"
-MAGIC_BUTTON_L_SEARCH_RESTART = "Click again to restart undercut search"
+MAGIC_BUTTON_L_NOT_FIRST = "An auction has been undercut. Click again to cancel %s"
+MAGIC_BUTTON_L_OWNED_TOP = "You own the top auction for %s"
+MAGIC_BUTTON_L_SEARCH_RESTART = "Click again to continue the undercut search"
+MAGIC_BUTTON_L_CANCELLING = "Cancelling ID %s"
+MAGIC_BUTTON_L_NO_MORE_LEFT = "No more auctions to check"
 
 function MagicButtonUndercutFrameMixin:OnLoad()
   self:Reset()
@@ -70,7 +72,7 @@ end
 
 function MagicButtonUndercutFrameMixin:ButtonPress()
   if self.currentAuction and self.isUndercut then
-    MagicButton_Print("Cancelling ID " .. self.currentAuction.auctionID)
+    MagicButton_Print(MAGIC_BUTTON_L_CANCELLING:format(self.currentAuction.auctionID))
     C_AuctionHouse.CancelAuction(self.currentAuction.auctionID)
     self.toCancel = nil
     self.searchWaiting = false
@@ -107,7 +109,7 @@ function MagicButtonUndercutFrameMixin:UpdateCurrentAuction()
   self.isUndercut = false
   self.currentAuction = C_AuctionHouse.GetOwnedAuctionInfo(self.auctionIndex)
   if not self.currentAuction then
-    MagicButton_Print("No more to cancel")
+    MagicButton_Print(MAGIC_BUTTON_L_NO_MORE_LEFT)
     self:Reset()
   end
 end
