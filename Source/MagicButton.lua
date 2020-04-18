@@ -13,7 +13,7 @@ function MagicButton()
 end
 
 function MagicButton_Print(message)
-  print("|cc935e0ffMagicButton|r: " .. message)
+  print("|cc935e0ffMagic Button|r: " .. message)
 end
 
 local function CreateUndercutFrame()
