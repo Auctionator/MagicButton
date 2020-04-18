@@ -1,9 +1,11 @@
 ## Interface: 80300
 ## Title: Magic Post Button
-## Version: 3.9
+## Version: 4
 ## Author: plusmouse
 ## Notes: Post and Cancel with a keyboard shortcut
 
-Source/MagicButton.lua
-Source/Mixins/Undercut.lua
-Source/Frames/Undercut.xml
+Locales\Manifest.xml
+Source\Locales.lua
+Source\MagicButton.lua
+Source\Mixins\Undercut.lua
+Source\Frames\Undercut.xml
