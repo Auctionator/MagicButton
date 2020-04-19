@@ -5,7 +5,7 @@ local function FixMissingTranslations(incomplete, locale)
     return
   end
 
-  local enUS = MAGIC_BUTTONS_LOCALES["enUS"]()
+  local enUS = MAGIC_BUTTON_LOCALES["enUS"]()
   for key, val in pairs(enUS) do
     if incomplete[key] == nil then
       incomplete[key] = val
