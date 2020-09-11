@@ -7,6 +7,10 @@ function MagicButton()
   if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.CommoditiesSell then
     AuctionHouseFrame.CommoditiesSellFrame:PostItem()
   end
+  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.ItemBuy then
+    AuctionHouseFrame.ItemBuyFrame.BuyoutFrame.BuyoutButton:Click()
+    StaticPopup1Button1:Click()
+  end
   if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.Auctions then
     MagicButton_CancelAuctionMagic()
   end
