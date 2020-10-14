@@ -1,4 +1,4 @@
-## Interface: 80300
+## Interface: 90001
 ## Title: Magic Post Button
 ## Version: 4
 ## Author: plusmouse
