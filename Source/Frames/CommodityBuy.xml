@@ -1,0 +1,11 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Frame
+      name="MagicButtonCommodityBuyFrameTemplate"
+      mixin="MagicButtonCommodityBuyFrameMixin"
+      virtual="true"
+  >
+    <Scripts>
+        <OnEvent method="OnEvent"/>
+    </Scripts>
+  </Frame>
+</Ui>
