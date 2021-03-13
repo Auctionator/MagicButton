@@ -1,6 +1,6 @@
-## Interface: 90002
+## Interface: 90005
 ## Title: Magic Post Button
-## Version: 6
+## Version: 6.1
 ## Author: plusmouse
 ## Notes: Buy, Post and Cancel with a keyboard shortcut
 
