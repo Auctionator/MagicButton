@@ -1,5 +1,3 @@
-local MagicFrame = nil
-
 function MagicButton()
   if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.ItemSell then
     AuctionHouseFrame.ItemSellFrame:PostItem()
