@@ -7,5 +7,6 @@
 Locales\Manifest.xml
 Source\Locales.lua
 Source\MagicButton.lua
+Source\Binding.lua
 Source\Mixins\CommodityBuy.lua
 Source\Frames\CommodityBuy.xml
