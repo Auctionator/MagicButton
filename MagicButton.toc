@@ -1,4 +1,4 @@
-## Interface: 90005
+## Interface: 90105
 ## Title: Magic Post Button
 ## Version: 6.1
 ## Author: plusmouse
