@@ -1,0 +1,26 @@
+name: Curse Build
+
+on:
+  push:
+    tags:
+    - '*'
+
+    paths-ignore:
+    - ".github/**"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - uses: BigWigsMods/packager@v2
+      with:
+        args: -p 375746 -a kaNe9bN2
+      env:
+        CF_API_KEY: ${{ secrets.plusmouse_curseforge }}
+        WAGO_API_TOKEN: ${{ secrets.plusmouse_wago }}
