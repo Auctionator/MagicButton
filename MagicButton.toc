@@ -1,5 +1,5 @@
-## Interface: 90105
-## Title: Magic Post Button
+## Interface: 90207
+## Title: Magic Auctions Button
 ## Version: 6.1
 ## Author: plusmouse
 ## Notes: Buy, Post and Cancel with a keyboard shortcut
