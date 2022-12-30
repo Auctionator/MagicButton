@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100002
 ## Title: Magic Auctions Button
 ## Version: 6.1
 ## Author: plusmouse
