@@ -1,11 +1,11 @@
 function MagicButton()
-  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.ItemSell then
+  if AuctionHouseFrame.ItemSellFrame:IsVisible() then
     AuctionHouseFrame.ItemSellFrame:PostItem()
   end
-  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.CommoditiesSell then
+  if AuctionHouseFrame.CommoditiesSellFrame:IsVisible() then
     AuctionHouseFrame.CommoditiesSellFrame:PostItem()
   end
-  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.ItemBuy then
+  if AuctionHouseFrame.ItemBuyFrame:IsVisible() then
     if AuctionHouseFrame.ItemBuyFrame.BidFrame.BidButton:IsEnabled() and
         (IsAltKeyDown() or not AuctionHouseFrame.ItemBuyFrame.BuyoutFrame.BuyoutButton:IsEnabled()) then
       AuctionHouseFrame.ItemBuyFrame.BidFrame.BidButton:Click()
@@ -14,10 +14,10 @@ function MagicButton()
     end
     StaticPopup1Button1:Click()
   end
-  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.CommoditiesBuy then
+  if AuctionHouseFrame.CommoditiesBuyFrame:IsVisible() then
     MagicButton_BuyCommodityMagic()
   end
-  if AuctionHouseFrame.displayMode == AuctionHouseFrameDisplayMode.Auctions then
+  if AuctionHouseFrameAuctionsFrame:IsVisible() then
     AuctionHouseFrameAuctionsFrame.CancelAuctionButton:Click()
     StaticPopup1Button1:Click()
   end
